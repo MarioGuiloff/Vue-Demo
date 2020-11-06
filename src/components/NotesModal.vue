@@ -3,7 +3,7 @@
         <v-dialog v-model="open" scrollable max-width="60%">
             <v-card>
                 <v-card-title>
-                    <span class="headline">modal title</span>
+                    <span class="headline">Add Task</span>
                 </v-card-title>
             
             <v-card-text>

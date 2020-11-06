@@ -1,7 +1,7 @@
 <template>
     <v-container fill-height>
         <v-layout align-center justify-center> 
-            <v-flex xs12 sm8 md4>
+            <v-flex xs12 sm8 md8>
              <v-form>   
                  <v-card class="elevation-20"> 
                      <v-toolbar dark color="primary"> 
@@ -11,6 +11,7 @@
                      </v-toolbar>
                      <v-card-text>
                          <v-text-field
+                         prepend-icon='person'
                          name="login"
                          label="Login"
                          type="text"
@@ -18,6 +19,7 @@
                         </v-text-field>
 
                          <v-text-field
+                         prepend-icon='lock'
                          name="password"
                          label="Password"
                          type="password"
@@ -29,9 +31,9 @@
                             
                      </v-divider>
                     <v-card-actions>
-                            <v-btn>Sign In</v-btn>
+                            <v-btn to='/signup'>Sign up</v-btn>
                                 <v-spacer></v-spacer>
-                            <v-btn>Login</v-btn>
+                            <v-btn @click.prevent="login()">Login</v-btn>
                     </v-card-actions>
                 </v-card>
              </v-form>    
@@ -42,6 +44,11 @@
 
 <script>
 export default {
-    name: 'login'
+    name: 'login',
+    methods:{
+        login(){
+            this.$router.push("/todo");
+        }
+    },
 }
 </script>

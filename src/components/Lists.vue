@@ -27,6 +27,7 @@
             style="height: 800px; overflow-y: auto"
         >
             <v-list-item
+                :to="{ name: 'tasks', params: {id:list.id} }"
                 v-for="(list,key) in lists"
                 v-bind:key="key"
             >
@@ -55,107 +56,107 @@ export default {
                 task: 12,
             },
             {
-                id:1,
+                id:2,
                 title: 'Lista 1',
                 task: 4,
             },
             {
-                id:1,
+                id:3,
                 title: 'Lista 1',
                 task: 45,
             },
             {
-                id:1,
+                id:4,
                 title: 'Lista 1',
                 task: 4,
             },
             {
-                id:1,
+                id:5,
                 title: 'Lista 1',
                 task: 45,
             },
             {
-                id:1,
+                id:6,
                 title: 'Lista 1',
                 task: 4,
             },
             {
-                id:1,
+                id:7,
                 title: 'Lista 1',
                 task: 45,
             },
                         {
-                id:1,
+                id:8,
                 title: 'Lista 1',
                 task: 45,
             },
             {
-                id:1,
+                id:9,
                 title: 'Lista 1',
                 task: 4,
             },
             {
-                id:1,
+                id:10,
                 title: 'Lista 1',
                 task: 45,
             },
              {
-                id:1,
+                id:11,
                 title: 'Lista 1',
                 task: 45,
             },
             {
-                id:1,
+                id:12,
                 title: 'Lista 1',
                 task: 4,
             },
             {
-                id:1,
+                id:13,
                 title: 'Lista 1',
                 task: 45,
             },
                         {
-                id:1,
+                id:14,
                 title: 'Lista 1',
                 task: 45,
             },
             {
-                id:1,
+                id:15,
                 title: 'Lista 1',
                 task: 4,
             },
             {
-                id:1,
+                id:16,
                 title: 'Lista 1',
                 task: 45,
             },
                         {
-                id:1,
+                id:17,
                 title: 'Lista 1',
                 task: 45,
             },
             {
-                id:1,
+                id:18,
                 title: 'Lista 1',
                 task: 4,
             },
             {
-                id:1,
+                id:19,
                 title: 'Lista 1',
                 task: 45,
             },
                         {
-                id:1,
+                id:20,
                 title: 'Lista 1',
                 task: 45,
             },
             {
-                id:1,
+                id:21,
                 title: 'Lista 1',
                 task: 4,
             },
             {
-                id:1,
+                id:22,
                 title: 'Lista 1',
                 task: 45,
             },

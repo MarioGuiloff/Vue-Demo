@@ -48,11 +48,21 @@ export default {
     name: "moreOptions",
     data: ()=>({
         loading: false,
-        open: false,
+        
         imageUrl:'',
         imageName:'',
         imageFile:'',
     }),
+    computed: {
+        open: {
+            get(){
+                return this.$store.getters.DRAWER;
+            },
+            set(value){
+                this.$store.commit("SET_DRAWER",value)
+            }
+        }
+    },
     methods:{
         pickFile(){
             this.$refs.image.click();

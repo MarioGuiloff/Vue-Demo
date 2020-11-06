@@ -3,7 +3,7 @@
         <v-card style="height:100%; overflow-y:hidden">
             <v-toolbar color="blue" dark>
                 <v-toolbar-title>
-                    title of the list
+                    title of the list {{listId}}
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-btn icon>
@@ -24,19 +24,19 @@
                 </v-layout>
             </v-card-actions>
         </v-card>
-        <NotesModal />
+       <router-view :key="$route.fullPath" name="notes"></router-view>
     </div>
 </template>
 
 <script>
 import Task from './Task';
 import NewTask from './NewTask';
-import NotesModal from './NotesModal'
+// import NotesModal from './NotesModal'
 
 export default {
     name: 'tasks',
     components: {
-        Task, NewTask, NotesModal
+        Task, NewTask//, NotesModal
     },
     data: () => ({
         tasks: [
@@ -47,126 +47,131 @@ export default {
                 isComplete: true,
             },
             {
-               id: 1,
+               id: 2,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: false,
             },
             {
-                id: 1,
+                id: 3,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: true,
             },
             {
-               id: 1,
+               id: 4,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: false,
             },
             {
-                id: 1,
+                id: 5,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: true,
             },
             {
-               id: 1,
+               id: 6,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: false,
             },
             {
-                id: 1,
+                id: 7,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: true,
             },
             {
-               id: 1,
+               id: 8,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: false,
             },
             {
-                id: 1,
+                id: 9,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: true,
             },
             {
-               id: 1,
+               id: 10,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: false,
             },
             {
-                id: 1,
+                id: 11,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: true,
             },
             {
-               id: 1,
+               id: 12,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: false,
             },
             {
-                id: 1,
+                id: 13,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: true,
             },
             {
-               id: 1,
+               id: 14,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: false,
             },
             {
-                id: 1,
+                id: 15,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: true,
             },
             {
-               id: 1,
+               id: 16,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: false,
             },
             {
-                id: 1,
+                id: 17,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: true,
             },
             {
-               id: 1,
+               id: 18,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: false,
             },
             {
-                id: 1,
+                id: 19,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: true,
             },
             {
-               id: 1,
+               id: 20,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: false,
             },
             {
-                id: 1,
+                id: 21,
                 title:'task title',
                 sub_title: 'this is a subtitle',
                 isComplete: true,
             }
         ]
     }),
+    computed: {
+        listId(){
+            return this.$route.params.id;
+        },
+    },
 };
 </script>

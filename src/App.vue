@@ -3,7 +3,8 @@
     <v-main>
       <!-- <login/> -->
       <!-- <singup/> -->
-      <todo/>
+      <!-- <todo/> -->
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
@@ -11,15 +12,15 @@
 <script>
 //import Login from './components/Auth/Login';
 //import Singup from './components/Auth/Singup';
-import Todo from './components/Todo';
+//import Todo from './components/Todo';
 
 export default {
   name: 'App',
 
-  components: {
-    //Singup,
-    Todo,
-  },
+  // components: {
+  //   //Singup,
+  //   Todo,
+  // },
 
   data: () => ({
     //

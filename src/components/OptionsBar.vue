@@ -1,9 +1,9 @@
 <template>
-<div>
+<div v-if="show">
     <v-card height="100%">
         <v-toolbar color="pink" dark>
             <v-toolbar-title>
-                Options
+                Options 
             </v-toolbar-title>
         </v-toolbar>
         <v-list>
@@ -46,7 +46,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item >
+                <v-list-item @click.prevent="displayNotification()">
                     <v-list-item-content>
                         <v-list-item-title>
                             Remove list
@@ -54,7 +54,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item >
+                <v-list-item @click.prevent="openDrawer()">
                     <v-list-item-content>
                         <v-list-item-title>
                             Change Background
@@ -65,7 +65,7 @@
             </v-list-group>
         </v-list>
     </v-card>
-    <MoreOptions/>
+    <MoreOptions />
     </div>
 </template>
 
@@ -120,8 +120,24 @@ export default {
         },
         filter(value){
             console.log("Filter by "+ value);
-        }
+        },
+        openDrawer(){
+            this.$store.commit("SET_DRAWER",true)
+        },
+        displayNotification(){
+            this.$store.commit("SET_NOTIFICATION",{
+                display: true,
+                alertClass: 'success',
+                timeout:'3000',
+                text: "List removed!",
+            })
+        },
         
     },
+    computed:{
+        show(){
+            return this.$route.params.id;
+        },
+    }
 }
 </script>

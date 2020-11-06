@@ -57,9 +57,9 @@
                             </v-text-field>
                             <v-divider light></v-divider>
                             <v-card-actions>
-                                <v-btn>Sing In</v-btn>
+                                <v-btn to='/login'>Sing In</v-btn>
                                 <v-spacer></v-spacer>
-                                <v-btn>Register <v-icon>keyboard_arrow_up</v-icon></v-btn>
+                                <v-btn round color="success" @click.prevent="register()">Register <v-icon>keyboard_arrow_up</v-icon></v-btn>
                             </v-card-actions>
 
                         </v-form>
@@ -84,6 +84,9 @@ export default {
         confirm_password:'',
     }),
     methods:{
+        register(){
+            this.$router.push('/login');
+        },
         valid() {
             return this.password === this.confirm_password;
         },
