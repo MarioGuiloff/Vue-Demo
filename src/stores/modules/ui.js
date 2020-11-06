@@ -6,7 +6,9 @@ export default{
             text: " Notification placeholder text",
             timeout: 3000,
             class: 'success',
-        }
+        },
+        displaySearchList:false,
+        newListForm: false, 
     },
     
     getters:{
@@ -15,7 +17,13 @@ export default{
         },
         NOTIFICATION: state => {
             return state.notification;
-        }
+        },
+        DISPLAY_SEARCH_LIST: state => {
+            return state.displaySearchList;
+        },
+        NEW_LIST_FORM: state => {
+            return state.newListForm;
+        },
     },
     mutations: {
        SET_DRAWER: (state,payload) => {
@@ -26,7 +34,14 @@ export default{
             state.notification.text = text;
             state.notification.class = alertClass; 
             state.notification.timeout = timeout;
-       }
+       },
+       SET_DISPLAY_SEARCH_LIST: (state,payload) => {
+           state.displaySearchList = payload;
+       },
+       SET_NEW_LIST_FORM: (state,payload) => {
+        state.newListForm = payload;
+    }
+
     },
     actions:{
        
